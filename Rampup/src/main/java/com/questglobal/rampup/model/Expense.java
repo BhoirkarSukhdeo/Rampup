@@ -14,6 +14,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+/**
+ * Entity class for expense
+ * @author Sukhdeo Bhoirkar
+ * @since 1.0
+ */
+
 @Entity
 @Data
 @Table(name="expense")
