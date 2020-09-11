@@ -15,7 +15,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * 
+ *  Entity class for User
  * @author Sukhdeo Bhoirkar
  * @since 1.0
  */
