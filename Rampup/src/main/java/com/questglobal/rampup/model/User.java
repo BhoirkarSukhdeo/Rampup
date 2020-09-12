@@ -15,7 +15,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- *  Entity class for User
+ * Entity class for User
+ * 
  * @author Sukhdeo Bhoirkar
  * @since 1.0
  */
@@ -33,7 +34,7 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	@Column(name = "name")
@@ -47,5 +48,4 @@ public class User implements Serializable {
 
 	@Column(name = "password")
 	private String password;
-
 }
