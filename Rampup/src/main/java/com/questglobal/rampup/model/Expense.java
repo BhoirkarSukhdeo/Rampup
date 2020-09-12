@@ -17,13 +17,14 @@ import lombok.NoArgsConstructor;
 
 /**
  * Entity class for expense
+ * 
  * @author Sukhdeo Bhoirkar
  * @since 1.0
  */
 
 @Entity
 @Data
-@Table(name="expense")
+@Table(name = "expense")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -33,8 +34,8 @@ public class Expense implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	@Column(name = "expense_title")
@@ -51,4 +52,7 @@ public class Expense implements Serializable {
 
 	@Column(name = "date")
 	private Date date;
+
+	@Column(name = "user_id")
+	private Integer user;
 }

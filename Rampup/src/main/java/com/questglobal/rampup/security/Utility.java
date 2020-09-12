@@ -5,6 +5,12 @@ import com.questglobal.rampup.dtos.UserDto;
 import com.questglobal.rampup.model.Expense;
 import com.questglobal.rampup.model.User;
 
+/**
+ * Utility class
+ * 
+ * @author Sukhdeo Bhoirkar
+ * @since 1.0
+ */
 public class Utility {
 
 	public static User getUserEntityFromUserDto(UserDto dto) throws Exception {
@@ -14,7 +20,7 @@ public class Utility {
 			user.setId(dto.getId());
 			user.setName(dto.getName());
 			user.setAddress(dto.getAddress());
-			user.setUserName(dto.getPassword());
+			user.setUserName(dto.getUserName());
 			user.setPassword(dto.getPassword());
 		} catch (Exception e) {
 			throw new Exception("User Parsing Error");
@@ -36,10 +42,11 @@ public class Utility {
 		}
 		return dto;
 	}
+
 	public static Expense getExpenseEntityFromExpenseDto(ExpenseDto dto) throws Exception {
-		Expense expense=null;
+		Expense expense = null;
 		try {
-			expense=new Expense();
+			expense = new Expense();
 			expense.setId(dto.getId());
 			expense.setExpenseTitle(dto.getExpenseTitle());
 			expense.setDescription(dto.getDescription());
@@ -51,11 +58,11 @@ public class Utility {
 		}
 		return expense;
 	}
-	
+
 	public static ExpenseDto getExpenseDtoFromExppense(Expense expense) throws Exception {
-		ExpenseDto dto=null;
+		ExpenseDto dto = null;
 		try {
-			dto=new ExpenseDto();
+			dto = new ExpenseDto();
 			dto.setId(expense.getId());
 			dto.setExpenseTitle(expense.getExpenseTitle());
 			dto.setDescription(expense.getDescription());
@@ -65,6 +72,6 @@ public class Utility {
 		} catch (Exception e) {
 			throw new Exception("ExpenseDto Parsing Error");
 		}
-		return dto;	
+		return dto;
 	}
 }

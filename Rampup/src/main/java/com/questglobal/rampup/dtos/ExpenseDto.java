@@ -7,12 +7,18 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * ExpenseDto class
+ * 
+ * @author Sukhdeo Bhoirkar
+ * @since 1.0
+ */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class ExpenseDto {
-	
+
 	private Integer id;
 	private String expenseTitle;
 	private String category;
