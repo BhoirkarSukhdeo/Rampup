@@ -1,5 +1,7 @@
 package com.questglobal.rampup.dtos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,5 +23,6 @@ public class UserDto {
 	private String name;
 	private String address;
 	private String userName;
+	@JsonIgnore
 	private String password;
 }
