@@ -1,5 +1,7 @@
 package com.questglobal.rampup.security;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.questglobal.rampup.dtos.ExpenseDto;
 import com.questglobal.rampup.dtos.UserDto;
 import com.questglobal.rampup.model.Expense;
@@ -13,7 +15,9 @@ import com.questglobal.rampup.model.User;
  */
 public class Utility {
 
-	public static User getUserEntityFromUserDto(UserDto dto) throws Exception {
+	private static final Logger log = LoggerFactory.getLogger(Utility.class);
+
+	public static User getUserEntityFromUserDto(UserDto dto) {
 		User user = null;
 		try {
 			user = new User();
@@ -23,12 +27,13 @@ public class Utility {
 			user.setUserName(dto.getUserName());
 			user.setPassword(dto.getPassword());
 		} catch (Exception e) {
-			throw new Exception("User Parsing Error");
+			user = null;
+			log.error("User parsing error");
 		}
 		return user;
 	}
 
-	public static UserDto getUserDtoFromUserEntity(User user) throws Exception {
+	public static UserDto getUserDtoFromUserEntity(User user) {
 		UserDto dto = null;
 		try {
 			dto = new UserDto();
@@ -38,12 +43,13 @@ public class Utility {
 			dto.setUserName(user.getUserName());
 			dto.setPassword(user.getPassword());
 		} catch (Exception e) {
-			throw new Exception("UserDto Parsing Error");
+			dto = null;
+			log.error("UserDto parsing error");
 		}
 		return dto;
 	}
 
-	public static Expense getExpenseEntityFromExpenseDto(ExpenseDto dto) throws Exception {
+	public static Expense getExpenseEntityFromExpenseDto(ExpenseDto dto) {
 		Expense expense = null;
 		try {
 			expense = new Expense();
@@ -54,12 +60,13 @@ public class Utility {
 			expense.setAmount(dto.getAmount());
 			expense.setDate(dto.getDate());
 		} catch (Exception e) {
-			throw new Exception("Expense Parsing Error");
+			expense = null;
+			log.error("Expense parsing error");
 		}
 		return expense;
 	}
 
-	public static ExpenseDto getExpenseDtoFromExppense(Expense expense) throws Exception {
+	public static ExpenseDto getExpenseDtoFromExppense(Expense expense) {
 		ExpenseDto dto = null;
 		try {
 			dto = new ExpenseDto();
@@ -70,7 +77,8 @@ public class Utility {
 			dto.setAmount(expense.getAmount());
 			dto.setDate(expense.getDate());
 		} catch (Exception e) {
-			throw new Exception("ExpenseDto Parsing Error");
+			dto = null;
+			log.error("ExpenseDto parsing error");
 		}
 		return dto;
 	}

@@ -25,4 +25,5 @@ public class ExpenseDto {
 	private String description;
 	private float amount;
 	private Date date;
+	private Integer user;
 }
